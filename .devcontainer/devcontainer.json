@@ -28,5 +28,6 @@
 	"extensions": [
 		"mhutchie.git-graph",
 		"ms-python.vscode-pylance"
-	]
+	],
+	"postCreateCommand": "sudo curl https://cli-assets.heroku.com/install.sh | /bin/sh"
 }

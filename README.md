@@ -5,8 +5,9 @@ A line bot template with simply echo function
 ## Features
 
 - Using
-  - FastAPI
-  - Line Bot SDK Python
+  - [FastAPI](https://fastapi.tiangolo.com/)
+  - [Line Bot SDK Python](https://github.com/line/line-bot-sdk-python)
+  - VSCode devcontainer
   
 - Support
   - Heroku
@@ -14,5 +15,4 @@ A line bot template with simply echo function
 
 - pre-installed
   - git
-  - heroku clis
-  
+  - heroku cli

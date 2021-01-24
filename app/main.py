@@ -24,7 +24,7 @@ async def webhook_handler(request: Request):
         err = (
             f"Invalid Signature, check token and secret\n"
             f"request body:\n"
-            f"{request.decode()}"
+            f"{body.decode()}"
         )
         print(err)
         raise HTTPException(HTTP_200_OK, detail=err)

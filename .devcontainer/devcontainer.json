@@ -1,0 +1,33 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.155.1/containers/python-3
+{
+	"name": "line bot template",
+	"dockerComposeFile": [
+		"docker-compose-dev.yml"
+	],
+	"service": "api",
+	"workspaceFolder": "/workspace",
+	"remoteUser": "docker",
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.flake8Enabled": true,
+		"python.linting.flake8Path": "/usr/local/bin/flake8",
+		"editor.formatOnSave": true,
+		"python.formatting.provider": "black",
+		"python.formatting.blackPath": "/usr/local/bin/black",
+		"python.formatting.blackArgs": [
+			"--line-length",
+			"79"
+		],
+		"files.insertFinalNewline": true
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"mhutchie.git-graph",
+		"ms-python.vscode-pylance"
+	],
+	"postCreateCommand": "sudo curl https://cli-assets.heroku.com/install.sh | /bin/sh"
+}

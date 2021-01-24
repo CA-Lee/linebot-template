@@ -1,11 +1,13 @@
 FROM python:3-buster
 
+ARG DEBUG="false"
 WORKDIR /workspace
 COPY . .
 RUN \
     # debug
     id && \
     pwd && \
+    echo $DEBUG && \
     # install packages
     apt update && \
     apt upgrade -y && \

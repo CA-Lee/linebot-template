@@ -11,20 +11,20 @@ router = FastAPI()
 
 
 @router.post("/webhook")
-async def webhook_handler(
-    request: Request, sign: str = Header("", alias="x-line-signature")
-):
+async def webhook_handler(request: Request):
     """
     Handle all webhook requests from LINE
     """
 
+    body = await request.body()
+    sign = request.headers["x-line-signature"]
     try:
-        handler.handle((await request.body()).decode(), sign)
+        handler.handle(body.decode(), sign)
     except InvalidSignatureError:
         err = (
             f"Invalid Signature, check token and secret\n"
             f"request body:\n"
-            f"{(await request.body()).decode()}"
+            f"{body.decode()}"
         )
         print(err)
         raise HTTPException(HTTP_200_OK, detail=err)
